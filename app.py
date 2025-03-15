@@ -28,7 +28,7 @@ if os.path.exists(root_folder):
 
             for col, (filename, img) in zip(cols, images):
                 if img:
-                    col.image(img, use_column_width=True)
+                    col.image(img, use_container_width=True)
                     col.write(filename)
 else:
     st.error("No images found. Please run the image download script first.")
