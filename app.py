@@ -5,8 +5,8 @@ from PIL import Image
 
 def load_images(folder):
     image_files = ['product.png', 'idea.png', 'base.png', 'tryon.png']
-    images = [Image.open(os.path.join(folder, img)) if os.path.exists(os.path.join(folder, img)) else None for img in
-              image_files]
+    images = [(img, Image.open(os.path.join(folder, img))) if os.path.exists(os.path.join(folder, img)) else (img, None)
+              for img in image_files]
     return images
 
 
@@ -26,8 +26,9 @@ if os.path.exists(root_folder):
 
             cols = st.columns(4)
 
-            for col, img in zip(cols, images):
+            for col, (filename, img) in zip(cols, images):
                 if img:
-                    col.image(img, use_container_width=True)
+                    col.image(img, use_column_width=True)
+                    col.write(filename)
 else:
     st.error("No images found. Please run the image download script first.")
