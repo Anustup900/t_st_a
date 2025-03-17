@@ -24,7 +24,7 @@ if os.path.exists(root_folder):
             st.subheader(subfolder)
             images = load_images(folder_path)
 
-            cols = st.columns(4)
+            cols = st.columns(5)
 
             for col, (filename, img) in zip(cols, images):
                 if img:
