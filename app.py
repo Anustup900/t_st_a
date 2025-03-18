@@ -4,7 +4,7 @@ from PIL import Image
 
 
 def load_images(folder):
-    image_files = ['product.png', 'idea.png', 'base.png', 'tryon.png', 'tryon2.png']
+    image_files = ['product.png', 'idea.png', 'base.png', 'tryon.png', 'tryon2.png', 'tryon3.png']
     images = [(img, Image.open(os.path.join(folder, img))) if os.path.exists(os.path.join(folder, img)) else (img, None)
               for img in image_files]
     return images
@@ -24,7 +24,7 @@ if os.path.exists(root_folder):
             st.subheader(subfolder)
             images = load_images(folder_path)
 
-            cols = st.columns(5)
+            cols = st.columns(6)
 
             for col, (filename, img) in zip(cols, images):
                 if img:
