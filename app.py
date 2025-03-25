@@ -4,7 +4,7 @@ from PIL import Image
 
 
 def load_images(folder):
-    image_files = ['product.png', 'base.png', 'tryon3.png', 'tryon5.png']
+    image_files = ['product.png', 'base.png', 'tryon3.png', 'tryon6.png']
     images = [(img, Image.open(os.path.join(folder, img))) if os.path.exists(os.path.join(folder, img)) else (img, None)
               for img in image_files]
     return images
