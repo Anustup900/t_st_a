@@ -4,16 +4,16 @@ from PIL import Image
 
 
 def load_images(folder):
-    image_files = ['product.png', 'base.png', 'tryon3.png', 'tryon6.png']
+    image_files = ['product.png', 'idea.png', 'base.png', 'tryon.png', 'tryon3.png']
     images = [(img, Image.open(os.path.join(folder, img))) if os.path.exists(os.path.join(folder, img)) else (img, None)
               for img in image_files]
     return images
 
 
 # Root directory where images are stored
-root_folder = "Testing_set_tops_alle"
+root_folder = "Trousers_alle"
 
-st.title("Top Tryon View <> Pinterest Flow")
+st.title("Bottom Tryon View <> Pinterest Flow")
 
 if os.path.exists(root_folder):
     subfolders = sorted(os.listdir(root_folder))
